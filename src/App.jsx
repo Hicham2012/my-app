@@ -3,10 +3,10 @@ import './App.css';
 function App() {
   return (
     <>
+    <nav>
     <header>
 
     </header>
-    <nav>
       <ul>
         <li>
           <a>Home</a>

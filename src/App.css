@@ -1,38 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+:root {
+    /*---------------*\
+      Color palette
+    \*---------------*/
+    /* Primary */
+    --gray: #495E57;
+    --yellow: #F4CE14;
+    /* Secondary */
+    --tone-pink: #EE9972;
+    --tint-pink: #FBDABB;
+    /* Highlight */
+    --tint-gray: #EDEFEE;
+    --tint-black: #333333;
+    /*---------------*\
+        Typographie
+    \*---------------*/
+    --sub-title: 400 40pt "Inter", sans-serif;
+    --lead-text: 300 15pt "Inter", sans-serif;
+    --card-title: bold 18pt "Inter", sans-serif;
+    --paragraph: 400 16px "Inter", sans-serif;
+    /*---------------*\
+          Shapes
+    \*---------------*/
+    --first-border: 8px;
+    --second-border: 16px
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50px auto 200px;
+    grid-template-areas: 'nav nav' 'main main' 'footer footer';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+    grid-area: header;
+    background-color: red;
+    width: 150px;
+    height: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+    grid-area: nav;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+main {
+    grid-area: main;
+    background-color: blue;
+    height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+footer {
+    grid-area: footer;
+    background-color: green;
+    height: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    align-items: center;
+    width: 100%;
 }
