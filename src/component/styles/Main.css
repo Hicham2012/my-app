@@ -1,0 +1,33 @@
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.hero,
+.highlights,
+.testimonials,
+.about {
+    width: 100%;
+    flex: none;
+}
+
+.hero {
+    height: 70vh;
+    background-color: gray;
+}
+
+.highlights {
+    height: 80vh;
+    background-color: white;
+}
+
+.testimonials {
+    height: 50vh;
+    background-color: gray;
+}
+
+.about {
+    height: 70vh;
+    background-color: white;
+}

@@ -1,0 +1,14 @@
+header {
+    background-image: url(../pics/Logo\ .svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    align-items: center;
+    width: 100%;
+}

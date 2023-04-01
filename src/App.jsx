@@ -1,39 +1,14 @@
 import './App.css';
+import Header from './component/Header'
+import Main from './component/Main';
+import Footer from './component/Footer';
 
 function App() {
   return (
     <>
-    <nav>
-    <header>
-
-    </header>
-      <ul>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>About</a>
-        </li>
-        <li>
-          <a>Menu</a>
-        </li>
-        <li>
-          <a>Reservations</a>
-        </li>
-        <li>
-          <a>Order online</a>
-        </li>
-        <li>
-          <a>Login</a>
-        </li>
-      </ul>
-    </nav>
-    <main>
-
-    </main>
-    <footer>
-
-    </footer>
+    <Header />
+    <Main />
+    <Footer />
     </>
   );
 }

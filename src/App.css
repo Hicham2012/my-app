@@ -53,19 +53,11 @@ nav {
 main {
     grid-area: main;
     background-color: blue;
-    height: 100vh;
+    height: auto;
 }
 
 footer {
     grid-area: footer;
     background-color: green;
     height: 200px;
-}
-
-ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    align-items: center;
-    width: 100%;
 }
