@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import './styles/Header.css'
  export default function Header() {
   return (
@@ -8,22 +9,22 @@ import './styles/Header.css'
     </header>
       <ul>
         <li>
-          <a>Home</a>
+          <Link to="/" className='link' >Home</Link>
         </li>
         <li>
-          <a>About</a>
+          <Link to="#" className='link'>About</Link>
         </li>
         <li>
-          <a>Menu</a>
+          <Link to="/Menu" className='link'>Menu</Link>
         </li>
         <li>
-          <a>Reservations</a>
+          <Link to="/Orderonline" className='link'>Reservations</Link>
         </li>
         <li>
-          <a>Order online</a>
+          <Link to="/Reservation" className='link'>Order online</Link>
         </li>
         <li>
-          <a>Login</a>
+          <Link to="#" className='link'>Login</Link>
         </li>
       </ul>
     </nav>

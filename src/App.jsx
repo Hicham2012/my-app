@@ -1,15 +1,24 @@
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './component/Header'
-import Main from './component/Main';
-import Footer from './component/Footer';
+import Layout from './pages/Layout';
+import Home from './pages/Home';
+import Menu from './pages/Menu';
+import Orderonline from './pages/Orderonline';
+import Reservation from './pages/Reservation';
 
 function App() {
   return (
-    <>
-    <Header />
-    <Main />
-    <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout />}> 
+          <Route index element={<Home />} />
+          <Route path="/Menu" element={<Menu />} />
+          <Route path='/Orderonline' element={<Orderonline />}/>
+          <Route path='/Reservation' element={<Reservation />}/>
+        </Route> 
+      </Routes>
+    </BrowserRouter>
   );
 }
 

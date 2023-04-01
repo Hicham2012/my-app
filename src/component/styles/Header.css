@@ -12,3 +12,7 @@ ul {
     align-items: center;
     width: 100%;
 }
+
+.link {
+    text-decoration: none;
+}
