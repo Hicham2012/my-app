@@ -1,0 +1,565 @@
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero,
+.highlights,
+.testimonials,
+.about {
+    width: 100%;
+    flex: none;
+}
+
+.hero {
+    height: 70vh;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.highlights {
+    height: 80vh;
+    background-color: white;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonials {
+    height: 50vh;
+    /* background-color: gray; */
+}
+
+.about {
+    height: 70vh;
+    background-color: white;
+}
+
+button {
+    padding: 16px 16px;
+    background-color: var(--yellow);
+    border-radius: var(--first-border);
+    border: 1px solid var(--yellow);
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    font: var(--lead-text);
+}
+
+
+/* Hero section */
+
+.hero-cont {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas: 'det img';
+    height: 80%;
+    width: 100%;
+    margin: 0 10%;
+}
+
+.hero-det {
+    grid-area: det;
+    /* background-color: blue; */
+    height: 100%;
+    position: relative;
+}
+
+.hero-img {
+    grid-area: img;
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    position: relative;
+}
+
+.hero-img1 {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    position: absolute;
+    right: 0%;
+    background-image: url(https://cdn.discordapp.com/attachments/941095160517894185/1092566974959198360/restauranfood.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: background-size ease-in 300ms;
+}
+
+@media (hover:hover) {
+    .hero-img1:hover {
+        background-size: 105%;
+    }
+}
+
+.hero-det>h1,
+.hero-det>h4 {
+    margin: 0;
+}
+
+.hero-det>h1 {
+    font: var(--sub-title);
+    color: var(--yellow);
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+.hero-det>h4 {
+    font: var(--lead-text);
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+.hero-det>p {
+    font: var(--paragraph);
+    padding-right: 10%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero-det>button {
+    bottom: 0%;
+}
+
+
+/* Highlights */
+
+.high-cont {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 70px auto;
+    grid-template-areas: 'ttop' 'bbotom';
+    margin: 0 10%;
+}
+
+.high-top {
+    grid-area: ttop;
+    position: relative;
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.high-top>button {
+    right: 0%;
+}
+
+.high-top>h2 {
+    font: var(--sub-title);
+    position: absolute;
+}
+
+.high-bottom {
+    grid-area: bbotom;
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: grid;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.test {
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    /* display: grid; */
+    /* grid-gap: 10%; */
+    /* justify-content: space-between; */
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 500px)); */
+    /* grid-auto-flow: column; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fullpart {
+    width: 17rem;
+    height: 22rem;
+    background-color: var(--tint-gray);
+    border-radius: var(--second-border) var(--second-border) 0 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 55%;
+    grid-template-areas: 'upper' 'lower';
+}
+
+.upperpart {
+    grid-area: upper;
+    /* background-color: aqua; */
+    /* background-image: url(../component/pics/greek salad.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    border-radius: var(--second-border) var(--second-border) 0 0;
+    transition: background-size ease-in 200ms;
+}
+
+@media (hover: hover) {
+    .upperpart:hover {
+        background-size: 105%;
+    }
+}
+
+.lowerpart {
+    grid-area: lower;
+    /* background-color: blueviolet; */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 70% auto;
+    grid-template-areas: 'total-price' 'description' 'order-part';
+    margin: 2% 2%;
+}
+
+.title-price {
+    grid-area: total-price;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+
+.describtion {
+    grid-area: description;
+    /* background-color: blue; */
+}
+
+.order-part {
+    grid-area: order-part;
+    /* background-color: pink; */
+    position: relative;
+}
+
+.title-price>h1 {
+    font: var(--card-title);
+}
+
+.title-price>h3 {
+    color: var(--tone-pink);
+    font: var(--highlighted-text);
+}
+
+.describtion>p {
+    font: var(--highlighted-text);
+    font-size: 18px;
+    max-width: 65ch;
+    margin: 0;
+    color: var(--tint-black);
+}
+
+.order::after {
+    content: var(--scooter);
+    margin-left: 2%;
+}
+
+.order {
+    color: var(--tint-black);
+    font: bold 1rem "Roboto", sans-serif;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    cursor: pointer;
+}
+
+
+/* Testimonials */
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: 'uppart' 'botpart';
+}
+
+.uppart {
+    grid-area: uppart;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uppart,
+.botpart {
+    margin: 0 8%;
+}
+
+.uppart>h2 {
+    font: var(--sub-title);
+}
+
+.botpart {
+    grid-area: botpart;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* grid-auto-flow: column; */
+    /* width: 100%; */
+    /* grid-gap: 3%; */
+    /* justify-content: center; */
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+}
+
+.test-cont {
+    width: 15rem;
+    min-height: 12rem;
+    background: var(--tint-gray);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 50% 30%;
+    grid-template-areas: 'test-score' 'test-img-name' 'test-rev';
+    border-radius: var(--first-border);
+}
+
+.test-score,
+.test-img-name,
+.test-rev {
+    margin: 0% 2%;
+}
+
+.test-score {
+    grid-area: test-score;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+}
+
+.test-img-name {
+    grid-area: test-img-name;
+    /* background-color: aqua; */
+    display: flex;
+    gap: 10%;
+}
+
+.test-rev {
+    grid-area: test-rev;
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+}
+
+
+/* About */
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray);
+}
+
+.about-cont {
+    /* width: 100px; */
+    height: 90%;
+    /* background: red; */
+    margin: 0 8%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas: 'about-det about-img';
+}
+
+.about-det {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: about-det;
+    /* background-color: blue; */
+}
+
+.about-det>h1,
+.about-det>h3 {
+    margin: 0;
+}
+
+.about-det>h1 {
+    font: var(--sub-title);
+    color: var(--yellow);
+}
+
+.about-det>h3 {
+    font: var(--lead-text);
+}
+
+.about-det>p {
+    font: var(--paragraph);
+    /* width: 65ch; */
+}
+
+.about-img {
+    grid-area: about-img;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.img1,
+.img2 {
+    width: 19rem;
+    height: 22rem;
+    /* background-color: yellow; */
+    border: 1px solid var(--tint-black);
+}
+
+.img1 {
+    position: absolute;
+    bottom: 0%;
+    left: 5%;
+    background-image: url(https://cdn.discordapp.com/attachments/941095160517894185/1092577785471578153/Mario_and_Adrian_A.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img2 {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-image: url(https://cdn.discordapp.com/attachments/941095160517894185/1092577942372094054/restaurant_chef_B.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (hover:hover) {
+    .img1:hover {
+        z-index: 2;
+        transition: all ease 200ms;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    /* Hero */
+    .hero {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: auto;
+        flex-direction: column;
+    }
+    .hero-cont {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 70%;
+        grid-template-areas: 'img''det';
+        height: 80%;
+        transform: scale(.85);
+    }
+    /* Highlights */
+    .highlights {
+        height: 200vh;
+    }
+    .high-cont {
+        width: 100%;
+        height: 80%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 70px auto;
+        grid-template-areas: 'ttop' 'bbotom';
+        margin: 0 10%;
+    }
+    .high-top {
+        grid-area: ttop;
+        position: relative;
+        /* background-color: red; */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        /* transform: scale(.85); */
+    }
+    .high-top>button {
+        right: 0%;
+        transform: scale(.85);
+    }
+    .high-top>h2 {
+        font: var(--sub-title);
+        position: absolute;
+        transform: scale(.85);
+    }
+    .high-bottom {
+        grid-area: bbotom;
+        width: 100%;
+        height: 100%;
+        /* background-color: yellow; */
+        display: grid;
+        align-items: center;
+        /* justify-content: space-between; */
+        transform: scale(.85);
+    }
+    .test {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .fullpart {
+        width: 17rem;
+        height: 22rem;
+        background-color: var(--tint-gray);
+        border-radius: var(--second-border) var(--second-border) 0 0;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 45% 55%;
+        grid-template-areas: 'upper' 'lower';
+    }
+    /* Testimonials */
+    .testimonials {
+        height: 70vh;
+        /* background-color: gray; */
+    }
+    .botpart {
+        grid-area: botpart;
+        /* background-color: yellow; */
+        display: grid;
+        /* align-items: center; */
+        /* justify-content: space-between; */
+        /* grid-auto-flow: column; */
+        /* width: 100%; */
+        height: 100%;
+        grid-gap: 2%;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .uppart>h2,
+    .test-cont {
+        transform: scale(.85);
+    }
+    /* About */
+    .about {
+        height: 90vh;
+        /* background-color: white; */
+    }
+    .about-cont {
+        /* width: 100px; */
+        height: 90%;
+        /* background: red; */
+        margin: 0 8%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 'about-det' 'about-img';
+    }
+    .about-det,
+    .about-img {
+        transform: scale(.85);
+    }
+    .img1,
+    .img2 {
+        position: relative;
+    }
+}

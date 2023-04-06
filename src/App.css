@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root {
     /*---------------*\
       Color palette
@@ -15,15 +18,20 @@
     /*---------------*\
         Typographie
     \*---------------*/
-    --sub-title: 400 40pt "Inter", sans-serif;
-    --lead-text: 300 15pt "Inter", sans-serif;
-    --card-title: bold 18pt "Inter", sans-serif;
-    --paragraph: 400 16px "Inter", sans-serif;
+    --sub-title: 400 40pt "Roboto", sans-serif;
+    --lead-text: 300 18pt "Roboto", sans-serif;
+    --card-title: bold 18pt "Roboto", sans-serif;
+    --paragraph: 400 16pt "Roboto", sans-serif;
+    --highlighted-text: 300 16pt "Roboto", sans-serif;
     /*---------------*\
           Shapes
     \*---------------*/
     --first-border: 8px;
-    --second-border: 16px
+    --second-border: 16px;
+    /*---------------*\
+          Icons
+    \*---------------*/
+    --scooter: url(./component/pics/scooter.png)
 }
 
 .App {
@@ -36,14 +44,14 @@
 
 header {
     grid-area: header;
-    background-color: red;
+    /* background-color: red; */
     width: 150px;
     height: 50px;
 }
 
 nav {
     grid-area: nav;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,12 +60,12 @@ nav {
 
 main {
     grid-area: main;
-    background-color: blue;
+    /* background-color: blue; */
     height: auto;
 }
 
 footer {
     grid-area: footer;
-    background-color: green;
-    height: 200px;
+    /* background-color: var(--yellow); */
+    height: 240px;
 }
