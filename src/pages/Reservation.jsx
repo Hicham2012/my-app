@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useReducer, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './styles/Reservation.css'
 
 const initializeTimes = {
   date: '',
@@ -72,6 +73,7 @@ export default function Reservation() {
   const [availableTimes, setAvailableTimes] = useState(initializeTimes)
   const [times, setTimes] = useState([])
   const [saved, setSaved] = useState(false)
+  const [isntValid, setIsntValid] = useState(true)
   console.log(state)
   useEffect(() => {
     const date = state.date.replace(/-/g, '')
@@ -97,6 +99,8 @@ export default function Reservation() {
       <option key={x}>{x}</option>
     )
   })
+
+ 
   const handleDateChange = (e) => {
     dispatch({
       type: 'SET_DATE',
@@ -137,31 +141,62 @@ const BookingForm = () => {
     <>
   <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}}>
     <label htmlFor="res-date">Choose date</label>
-    <input type="date" id="res-date"
-      value={state.date}
-      onChange={handleDateChange}
-    />
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      <input type="date" id="res-date"
+        value={state.date}
+        onChange={handleDateChange}
+        required
+      />
+      {state.date.length === 0 && <span style={{
+        color: 'red',
+        fontSize: '.8rem'
+      }}>Choose date</span>}
+    </div>
     <label htmlFor="res-time">Choose time</label>
-    <select id="res-time "
-    value={state.time}
-    onChange={handleTimeChange}
-    >
-       {options}
-    </select>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      <select id="res-time "
+      value={state.time}
+      onChange={handleTimeChange}
+      required
+      >
+        {options}
+      </select>
+      {state.time.length === 0 && <span style={{
+        color: 'red',
+        fontSize: '.8rem'
+      }}>Choose time</span>}
+    </div>
     <label htmlFor="guests">Number of guests</label>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
     <input type="number" placeholder="1" min="1" max="10" id="guests"
     value={state.guests}
     onChange={handleGuestsChange}
+    required
     />
+    {state.guests === 0 && <span style={{
+      color: 'red',
+      fontSize: '.8rem'
+    }}>Choose number of guests</span>}
+    </div>
     <label htmlFor="occasion">Occasion</label>
     <select id="occasion"
     value={state.occasion}
     onChange={handleOccasionChange}
+    required
     >
        <option>Birthday</option>
        <option>Anniversary</option>
     </select>
-    <input type="submit" onClick={handleSubmit} value="Make Your reservation" />
+    <input className='submit' type="submit" onClick={handleSubmit} disabled={state.date.length > 0 && state.time.length > 0 && state.guests > 0 && state.occasion.length > 0 ? false : true} value="Make Your reservation" />
  </form>
  </>
   )
@@ -169,8 +204,8 @@ const BookingForm = () => {
 
 
   return (
-    <>
-    <BookingForm />
-    </>
+    <section  className='reservation'>
+      <BookingForm />
+    </section>
   )
   }
